@@ -1,3 +1,4 @@
+
 import { useEffect, useState, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
@@ -16,6 +17,7 @@ import {
   FiUsers,
   FiBarChart2,
 } from 'react-icons/fi';
+import { SiGrafana } from 'react-icons/si';
 import { useAuthActions, useAdminCheck } from '../hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 import { HiOutlinePuzzlePiece } from 'react-icons/hi2';
@@ -242,6 +244,26 @@ const CommandPalette: React.FC = () => {
         'cache',
         'runtime',
         'cluster',
+      ],
+      section: t('commandPalette.sections.navigation'),
+    },
+    {
+      id: 'grafana-dashboard',
+      type: 'navigation',
+      icon: SiGrafana,
+      title: t('commandPalette.commands.Grafana.title'),
+      description: t('commandPalette.commands.Grafana.description'),
+      action: () => navigate('/grafana'),
+      keywords: [
+        'grafana',
+        'dashboard',
+        'monitoring',
+        'visualization',
+        'charts',
+        'metrics',
+        'analytics',
+        'observability',
+        'grafana dashboard',
       ],
       section: t('commandPalette.sections.navigation'),
     },
